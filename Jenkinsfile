@@ -13,7 +13,7 @@ pipeline {
                sh 'pwd'
                sh 'rm -rf *.war'
                sh 'ls -l'
-               sh 'jar -cvf Assign1Part2.war -C WebContent/ .'
+               sh 'jar -cvf Assign1Part2.war -C src/main/webapp/ .'
                docker.withRegistry('',registryCredential){
                   def customImage = docker.build("venkataravisridhardevarakonda/survey:${env.TIMESTAMP}")
                }
