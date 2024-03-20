@@ -45,7 +45,7 @@ pipeline {
       stage('Deploying to Rancher using Load Balancer as a service') {
          steps {
             script{
-               withKubeConfig([credentialsId: 'kubeconfig_credentials', serverUrl: 'https://your-rancher-api-url']) {
+               withKubeConfig([credentialsId: 'kubeconfig_credentials', serverUrl: 'https://ec2-18-233-14-73.compute-1.amazonaws.com/k8s/clusters/c-m-xnwhb6hl']) {
                    sh "kubectl set image deployment/survey-lb container-0=${registry}:${env.TIMESTAMP}"
                }
             }
