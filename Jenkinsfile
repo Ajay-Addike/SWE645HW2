@@ -32,7 +32,7 @@ pipeline {
          }
       }
 
-      stage('Deploying to Rancher to single node(deployed in 3 replicas)') {
+      stage('Deploying to Rancher on a single node, which is configured to have three replicas deployed.') {
          steps {
             script{
                withKubeConfig([credentialsId: 'kubeconfig_credentials', serverUrl: 'https://ec2-18-233-14-73.compute-1.amazonaws.com/k8s/clusters/c-m-xnwhb6hl']) {
@@ -42,7 +42,7 @@ pipeline {
          }
       }
 
-      stage('Deploying to Rancher using Load Balancer as a service') {
+      stage('Deploying to Rancher utilizing a Load Balancer as a service.') {
          steps {
             script{
                withKubeConfig([credentialsId: 'kubeconfig_credentials', serverUrl: 'https://ec2-18-233-14-73.compute-1.amazonaws.com/k8s/clusters/c-m-xnwhb6hl']) {
